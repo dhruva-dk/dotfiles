@@ -1,2 +1,3 @@
-# dotfiles
-Repository for dotfiles and configurations
+# My Dotfiles
+
+Welcome to my "digital home." Feel free to copy any of these dotfiles.
