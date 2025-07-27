@@ -26,13 +26,16 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-### User configuration ###
+
+
+
+
+
+
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/dk/.lmstudio/bin"
 # End of LM Studio CLI section
-
-export PATH="/opt/homebrew/bin:$PATH"
 
 
 
@@ -44,7 +47,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 
 
 # Added by Toolbox App
@@ -52,3 +55,6 @@ export PATH="$PATH:/Users/dk/Library/Application Support/JetBrains/Toolbox/scrip
 
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+
+export EDITOR='code -w'
