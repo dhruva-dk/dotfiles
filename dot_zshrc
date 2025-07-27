@@ -1,8 +1,0 @@
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/dk/.lmstudio/bin"
-# End of LM Studio CLI section
-
-export PATH="/opt/homebrew/bin:$PATH"
