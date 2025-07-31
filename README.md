@@ -24,15 +24,7 @@ If not already installed, run the following command:
 /bin/bash -c "$(curl -fsSL [https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh](https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh))"
 ```
 
-### 2. Install Oh My Zsh
-
-This framework is required for the custom shell configuration.
-
-```sh
-sh -c "$(curl -fsSL [https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh))"
-```
-
-### 3. Clone This Repository
+### 2. Clone This Repository
 
 Clone the dotfiles into the correct directory.
 
@@ -40,7 +32,7 @@ Clone the dotfiles into the correct directory.
 git clone [https://github.com/dhruva-dk/dotfiles.git](https://github.com/dhruva-dk/dotfiles.git) ~/Developer/dotfiles
 ```
 
-### 4. Install All Software
+### 3. Install All Software
 
 Navigate to the repository and use the `Brewfile` to install all command-line tools and applications.
 
@@ -49,7 +41,7 @@ cd ~/Developer/dotfiles
 brew bundle install
 ```
 
-### 5. Link the Dotfiles
+### 4. Link the Dotfiles
 
 Use `stow` to create the symlinks in your home directory. The command below uses full flag names for clarity.
 
@@ -63,7 +55,7 @@ cd ~/Developer/dotfiles
 stow --restow --target=$HOME zsh git
 ```
 
-### 6. Post-Installation Configuration
+### 5. Post-Installation Configuration
 
 After the automated installation, a few tools need to be configured manually before they are ready to use.
 
