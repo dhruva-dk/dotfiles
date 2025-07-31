@@ -8,6 +8,14 @@ My personal configuration files for macOS, managed with `stow` and `brew`.
 
 These are the steps to set up a new Mac to mirror this configuration.
 
+### Before You Begin: Manual Steps
+
+Before running the main installation script, some manual intervention is required.
+
+1.  **Install Xcode Command Line Tools:** If it's a brand new Mac, open the Terminal app and run `xcode-select --install`. A GUI installer will pop up; complete the installation. This is required for Homebrew to work correctly.
+2.  **Sign into the Mac App Store:** Open the App Store application and sign in with your Apple ID. This is necessary for `mas` to install applications like Xcode.
+3.  **Be Ready with Your Password:** The `brew bundle install` command will install system-wide applications and will prompt for your administrator password multiple times.
+
 ### 1. Install Homebrew
 
 If not already installed, run the following command:
@@ -54,6 +62,54 @@ After the flags, list the names of the package folders you want to link.
 cd ~/Developer/dotfiles
 stow --restow --target=$HOME zsh git
 ```
+
+### 6. Post-Installation Configuration
+
+After the automated installation, a few tools need to be configured manually before they are ready to use.
+
+#### Configure Java (`jenv`)
+
+Your `Brewfile` installs multiple Java Development Kits (JDKs). You need to add them to `jenv` and set a global default.
+
+```sh
+# Add the installed Java versions to jenv
+jenv add /usr/local/opt/openjdk@11
+jenv add /usr/local/opt/openjdk@17
+jenv add /usr/local/opt/openjdk
+
+# Set your desired global default version (e.g., 17)
+jenv global 17.0
+
+# Verify the setup
+jenv versions
+```
+
+#### Configure Ruby (`rbenv`)
+
+To ensure `rbenv` manages your shell's Ruby version, you need to initialize it. The brew command will give you instructions, which typically involve adding a line to your shell configuration.
+
+```bash
+# This command will print the line you need to add
+rbenv init
+```
+
+Since your `.zshrc` is managed by `stow`, you must add the required line to the source file located at `~/Developer/dotfiles/zsh/.zshrc`, not the one in your home directory.
+
+#### Configure JetBrains IDEs
+
+The `Brewfile` installs the JetBrains Toolbox, which manages all your JetBrains IDEs.
+
+1. Open the JetBrains Toolbox application.
+2. Sign in with your JetBrains account.
+3. Use the Toolbox interface to install your desired IDEs (e.g., IntelliJ IDEA, PyCharm, WebStorm).
+
+#### Configure Adobe Creative Cloud
+
+The script installs the Adobe Creative Cloud manager. You must now:
+
+1. Open the Creative Cloud application.
+2. Sign in with your Adobe account.
+3. Install Photoshop, Lightroom, etc., from within the app.
 
 ---
 
