@@ -78,16 +78,8 @@ jenv global 24
 jenv versions
 ```
 
-#### Configure Ruby (`rbenv`)
+Note that for older JDKs, the homebrew installation folder will have an @ tag  (`/opt/homebrew/opt/openjdk@17`) and the system java folder should have a dash followed by the JDK version (`/Library/Java/JavaVirtualMachines/openjdk-17.jdk`)
 
-To ensure `rbenv` manages your shell's Ruby version, you need to initialize it. The brew command will give you instructions, which typically involve adding a line to your shell configuration.
-
-```bash
-# This command will print the line you need to add
-rbenv init
-```
-
-Since your `.zshrc` is managed by `stow`, you must add the required line to the source file located at `~/Developer/dotfiles/zsh/.zshrc`, not the one in your home directory.
 
 #### Configure JetBrains IDEs
 
