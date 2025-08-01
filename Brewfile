@@ -3,6 +3,7 @@ brew "fastlane"
 brew "gh"
 brew "jenv"
 brew "mas"
+brew "nvm"
 brew "openjdk"
 brew "rbenv"
 brew "starship"
@@ -23,6 +24,7 @@ cask "maccy"
 cask "postman"
 cask "spotify"
 cask "visual-studio-code"
+mas "ImageBar", id: 6747653607
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
