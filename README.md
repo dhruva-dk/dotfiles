@@ -29,7 +29,7 @@ If not already installed, run the following command:
 Clone the dotfiles into the correct directory.
 
 ```sh
-git clone [https://github.com/dhruva-dk/dotfiles.git](https://github.com/dhruva-dk/dotfiles.git) ~/Developer/dotfiles
+git clone https://github.com/dhruva-dk/dotfiles.git ~/Developer/dotfiles
 ```
 
 ### 3. Install All Software
