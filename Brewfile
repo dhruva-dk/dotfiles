@@ -24,8 +24,6 @@ cask "maccy"
 cask "postman"
 cask "spotify"
 cask "visual-studio-code"
-mas "1Password for Safari", id: 1569813296
-mas "AdGuard for Safari", id: 1440147259
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
