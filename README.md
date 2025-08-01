@@ -69,7 +69,7 @@ Your `Brewfile` installs multiple Java Development Kits (JDKs). You need to add 
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 # 2. Add the Java versions to jenv
-jenv add /usr/local/opt/openjdk
+jenv add /opt/homebrew/opt/openjdk
 
 # 3. Set your desired global default version (e.g., 24)
 jenv global 24
