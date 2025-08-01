@@ -15,5 +15,7 @@ export PATH="$PATH:/Users/dk/Library/Application Support/JetBrains/Toolbox/scrip
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+# Added by rbenv
+eval "$(rbenv init - --no-rehash zsh)"
 
 export EDITOR='code -w'
