@@ -64,15 +64,17 @@ After the automated installation, a few tools need to be configured manually bef
 Your `Brewfile` installs multiple Java Development Kits (JDKs). You need to add them to `jenv` and set a global default.
 
 ```sh
-# Add the installed Java versions to jenv
-jenv add /usr/local/opt/openjdk@11
-jenv add /usr/local/opt/openjdk@17
+# 1. Symlink the JDKs installed by Homebrew (requires sudo)
+# This makes them discoverable by macOS and other applications.
+sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+# 2. Add the Java versions to jenv
 jenv add /usr/local/opt/openjdk
 
-# Set your desired global default version (e.g., 17)
-jenv global 17.0
+# 3. Set your desired global default version (e.g., 24)
+jenv global 24
 
-# Verify the setup
+# 4. Verify the setup
 jenv versions
 ```
 
