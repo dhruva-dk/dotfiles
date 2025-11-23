@@ -1,27 +1,36 @@
-brew "blueutil"
+# Core tools
 brew "chezmoi"
+brew "git" 
+brew "mise"
+# brew "stow" -> REMOVED (Redundant with chezmoi)
+# brew "ghostscript" -> REMOVED (Too heavy)
+# brew "starship" -> REMOVED (Moved to Mise)
+
+# Macos only
+{{ if eq .chezmoi.os "darwin" -}}
+
+brew "blueutil"
 brew "colima", restart_service: :changed
 brew "docker"
 brew "docker-compose"
-brew "ghostscript"
 brew "mas"
-brew "mise"
-brew "starship"
-brew "stow"
+
 cask "1password"
-cask "1password-cli"
-cask "aldente"
+cask "1password-cli" 
+cask "aldente"       
 cask "appcleaner"
 cask "flutter"
-cask "font-fira-code-nerd-font"
-cask "github"
+cask "github"       
 cask "google-chrome"
 cask "intellij-idea"
 cask "logi-options+"
-cask "maccy"
 cask "spotify"
 cask "visual-studio-code"
 cask "webstorm"
+
+# Font for starship terminal prompt
+cask "font-fira-code-nerd-font"
+
 mas "1Password for Safari", id: 1569813296
 mas "AdGuard for Safari", id: 1440147259
 mas "ImageBar", id: 6747653607
@@ -30,9 +39,5 @@ mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "Transporter", id: 1450874784
 mas "Xcode", id: 497799835
-vscode "christian-kohler.path-intellisense"
-vscode "dbaeumer.vscode-eslint"
-vscode "esbenp.prettier-vscode"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "pkief.material-icon-theme"
+
+{{ end -}}
