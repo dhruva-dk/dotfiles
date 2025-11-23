@@ -1,8 +1,14 @@
+# Path to prioritize local binaries
+export PATH="$HOME/.local/bin:$PATH"
+
+# Load brew on mac
+{{ if eq .chezmoi.os "darwin" -}}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ end -}}
+
+eval "$(mise activate zsh)"
+eval "$(starship init zsh)"
+
 source "$HOME/.config/op/plugins.sh"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(starship init zsh)"
-eval "$(mise activate zsh)"
-
 export EDITOR="code --wait"
-
