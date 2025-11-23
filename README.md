@@ -10,4 +10,5 @@ Run the following command. On MacOS, installs brew, mise (runtime managment), se
 
 ## After Setup
 
+On linux, install all GUI applications necessary for environment (such as 1Password)
 Make sure to enable 1Password SSH agent (and if you're not me, update dotfiles as needed for SSH configuration).
