@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.os "linux" -}}
+eval "$(mise activate bash)"
+eval "$(starship init bash)"
+
+if [ -f "$HOME/.config/op/plugins.sh" ]; then
+    source "$HOME/.config/op/plugins.sh"
+fi
+
+export EDITOR="code --wait"
+
+{{ end -}}
