@@ -9,18 +9,6 @@ set -e
 # Brewfile hash: {{ include "dot_Brewfile.tmpl" | sha256sum }}
 
 echo "🍺 Brewfile changed. Updating packages..."
-# --global tells brew to look for ~/.Brewfile
 brew bundle --global --cleanup
-
-
-# Linux core dependencies
-{{ else if eq .chezmoi.os "linux" -}}
-
-echo "🐧 Linux detected. Installing default core dependencies (git, curl)"
-
-# Ubuntu/Debian
-packages="curl git"
-sudo apt-get update
-sudo apt-get install -y $packages
 
 {{ end -}}
