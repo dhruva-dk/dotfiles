@@ -1,5 +1,3 @@
-# 1password SSH Agent (requires symbolic link to ~/.1password/agent.sock on macOS)
-export SSH_AUTH_SOCK=~/.1password/agent.sock
 source "$HOME/.config/op/plugins.sh"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
