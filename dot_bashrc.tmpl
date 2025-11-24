@@ -1,4 +1,7 @@
 {{ if eq .chezmoi.os "linux" -}}
+
+export PATH="$HOME/.local/bin:$PATH"
+
 eval "$(mise activate bash)"
 eval "$(starship init bash)"
 
