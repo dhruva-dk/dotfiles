@@ -15,7 +15,7 @@ Personal dotfiles for macOS and Linux, managed with chezmoi.
 ## Quick install
 
 Run the chezmoi bootstrap and apply this repo:
-`sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply dhruva-dk`
+`sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply dhruva-dk`
 
 Notes:
 
