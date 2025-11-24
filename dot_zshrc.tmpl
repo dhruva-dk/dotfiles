@@ -1,7 +1,7 @@
+
 # Load brew on mac
-{{ if eq .chezmoi.os "darwin" -}}
 eval "$(/opt/homebrew/bin/brew shellenv)"
-{{ end -}}
+
 
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"

@@ -1,14 +1,6 @@
 #!/bin/bash
 set -e
 
-# Install Brew for macos
-{{ if eq .chezmoi.os "darwin" -}}
+# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
-{{ end -}}
-
-# Linux - core tools must already be installed 
-{{ if eq .chezmoi.os "linux" -}}
-curl https://mise.run | sh
-curl -sS https://starship.rs/install.sh | sh
-{{ end -}}
