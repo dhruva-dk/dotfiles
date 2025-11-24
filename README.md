@@ -1,14 +1,29 @@
 # Dotfiles
 
-My dotfiles for MacOS and Linux, managed by Chezmoi.
+Personal dotfiles for macOS and Linux, managed with chezmoi.
 
-## Setup
+## Supported platforms
 
-Run the following command. On MacOS, installs brew, mise (runtime managment), sets MacOS default settings, and installs GUI apps via brew cask through the Brewfile in this repository. On Linux, installs mise and applies dotfiles (no applications installed):
+- macOS (full bootstrap)
+- Linux (dotfiles only; expects some prerequisites)
 
+## Prerequisites
+
+- macOS: none (bootstrap installs Homebrew and other tools)
+- Linux: curl and git must already be installed
+
+## Quick install
+
+Run the chezmoi bootstrap and apply this repo:
 `sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply dhruva-dk`
 
-## After Setup
+Notes:
 
-On linux, install all GUI applications necessary for environment (such as 1Password)
-Make sure to enable 1Password SSH agent (and if you're not me, update dotfiles as needed for SSH configuration).
+- On macOS this will install Homebrew, essential CLI packages including mise (runtime management) and starship (terminal prompt), apply macOS defaults, and install GUI apps listed in the included Brewfile.
+- On Linux this installs mise and starship, then applies the dotfiles.
+
+## After setup
+
+- On Linux: install any required GUI apps (e.g., 1Password).
+- Enable the 1Password SSH agent if you use it.
+- If you are not Dhruva Kumar, update SSH and other machine-specific settings in the dotfiles as needed.

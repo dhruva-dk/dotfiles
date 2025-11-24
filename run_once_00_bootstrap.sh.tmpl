@@ -7,11 +7,8 @@ set -e
 eval "$(/opt/homebrew/bin/brew shellenv)"
 {{ end -}}
 
-# Linux - install core tools since we're not using brew: Mise, starship prompt, git, curl, etc.
+# Linux - core tools must already be installed 
 {{ if eq .chezmoi.os "linux" -}}
-packages="curl git build-essential unzip"
-sudo apt-get update
-sudo apt-get install -y $packages
 curl https://mise.run | sh
 curl -sS https://starship.rs/install.sh | sh
 {{ end -}}
