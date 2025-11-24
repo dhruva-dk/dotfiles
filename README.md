@@ -4,7 +4,7 @@ Personal dotfiles for macOS, managed with chezmoi. This will install Homebrew, e
 
 ## Quick install
 
-Run the chezmoi bootstrap and apply this repo:
+Run the chezmoi bootstrap (no prerequisites on macOS) and apply this repo:
 `sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply dhruva-dk`
 
 ## After setup
