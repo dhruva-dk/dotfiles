@@ -8,6 +8,8 @@
 
 # Linux
 
+\*.swp
+
 # VS Code
 
 .vscode/

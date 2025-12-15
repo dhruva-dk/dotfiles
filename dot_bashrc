@@ -122,4 +122,4 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init bash)"
 eval "$(~/.local/bin/mise activate bash)"
 
-export EDITOR ="code --wait"
+export EDITOR="code --wait"
