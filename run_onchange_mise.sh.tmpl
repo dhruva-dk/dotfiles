@@ -7,14 +7,14 @@ set -e
 
 echo "🛠️ Mise config changed. Installing/updating tools..."
 
-# Ensure mise is installed
-if ! command -v mise >/dev/null 2>&1; then
-  echo "📦 Installing mise via Homebrew..."
-  brew install mise
+# Load Homebrew environment for this script execution
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 # Update plugins and install tools defined in ~/.config/mise/config.toml
 mise plugins update --all || true
 mise install -y
 
-echo "✅ mise tools are up to date."

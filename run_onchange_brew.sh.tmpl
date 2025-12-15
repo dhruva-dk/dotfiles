@@ -6,5 +6,12 @@ set -e
 # This hash forces the script to run whenever dot_Brewfile.tmpl changes
 # Brewfile hash: {{ include "dot_Brewfile.tmpl" | sha256sum }}
 
+# Load Homebrew environment for this script execution
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 echo "🍺 Brewfile changed. Updating packages..."
 brew bundle --global --cleanup
