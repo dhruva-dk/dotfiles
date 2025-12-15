@@ -8,12 +8,12 @@ exit 0
 {{ end }}
 
 
-# 1. Install Xcode Command Line Tools (Only if missing)
+
+
+# 1. Check for Xcode Command Line Tools
 if ! xcode-select -p >/dev/null 2>&1; then
-    echo "Installing Xcode Command Line Tools..."
-    xcode-select --install
-else
-    echo "Xcode Command Line Tools already installed."
+    echo "Please install Xcode Command Line Tools and re-run this script."
+    exit 1
 fi
 
 # 2. Install Homebrew (Only if missing)

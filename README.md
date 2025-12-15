@@ -4,7 +4,10 @@ Personal dotfiles for macOS and Linux, managed with chezmoi. On macOS, this will
 
 ## Quick install
 
-Run the chezmoi bootstrap (no prerequisites on macOS; need `git` and `curl` on Linux) and apply this repo:
+On macOS, install xcode command line tools first:
+`xcode-select --install`
+
+Run the chezmoi bootstrap (need `git` and `curl` on Linux) and apply this repo:
 `sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init --apply dhruva-dk`
 
 ## After setup
