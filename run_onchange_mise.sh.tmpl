@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+# This hash forces the script to run whenever mise config changes
+# Mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+
+echo "🛠️ Mise config changed. Installing/updating tools..."
+
+# Ensure mise is installed
+if ! command -v mise >/dev/null 2>&1; then
+  echo "📦 Installing mise via Homebrew..."
+  brew install mise
+fi
+
+# Update plugins and install tools defined in ~/.config/mise/config.toml
+mise plugins update --all || true
+mise install -y
+
+echo "✅ mise tools are up to date."

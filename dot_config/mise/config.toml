@@ -1,3 +1,7 @@
 [tools]
 java = "latest"
 node = "lts"
+python = "latest"
+pnpm = "latest"
+go = "latest"
+rust = "stable"

@@ -1,6 +1,6 @@
 # Dotfiles
 
-Personal dotfiles for macOS, managed with chezmoi. This will install Homebrew, essential CLI packages including mise (runtime management) and starship (terminal prompt), apply macOS defaults, and install GUI apps listed in the included Brewfile.
+Personal dotfiles for macOS, managed with chezmoi. This will install Homebrew, essential CLI packages including mise (runtime management) and starship (terminal prompt), and install GUI apps listed in the included Brewfile.
 
 ## Quick install
 
