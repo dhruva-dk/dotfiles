@@ -1,13 +1,17 @@
 # macOS
-.DS_Store
+
+.DS*Store
 .AppleDouble
-._*
+.*\*
 .Spotlight-V100
 .Trashes
 
+# Linux
 
 # VS Code
+
 .vscode/
 
 # JetBrains (IntelliJ, PyCharm, etc.)
+
 .idea/

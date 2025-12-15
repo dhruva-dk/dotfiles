@@ -6,6 +6,12 @@ set -e
 # This hash forces the script to run whenever dot_Brewfile.tmpl changes
 # Brewfile hash: {{ include "dot_Brewfile.tmpl" | sha256sum }}
 
+
+{{ if ne .chezmoi.os "darwin" }}
+echo "Brewfile management only on MacOS."
+exit 0
+{{ end }}
+
 # Load Homebrew environment for this script execution
 if [ -f "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
