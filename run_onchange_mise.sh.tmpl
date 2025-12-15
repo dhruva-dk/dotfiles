@@ -5,6 +5,13 @@ set -e
 # This hash forces the script to run whenever mise config changes
 # Mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
 
+# Load Homebrew environment for this script execution
+if [ -f "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -f "/usr/local/bin/brew" ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 if ! command -v mise &> /dev/null; then
     echo "Mise is not installed on this system."
     exit 0
@@ -12,12 +19,7 @@ fi
 
 echo "🛠️ Mise config changed. Installing/updating tools..."
 
-# Load Homebrew environment for this script execution
-if [ -f "/opt/homebrew/bin/brew" ]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [ -f "/usr/local/bin/brew" ]; then
-    eval "$(/usr/local/bin/brew shellenv)"
-fi
+
 
 # Update plugins and install tools defined in ~/.config/mise/config.toml
 mise install -y
