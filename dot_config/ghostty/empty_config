@@ -1,5 +1,5 @@
 
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 background-opacity = 0.9
 background-blur-radius = 20
 
@@ -9,7 +9,7 @@ window-padding-y = 10
 
 window-colorspace = display-p3
 
-font-size = 16
+font-size = 14
 font-thicken = true 
 
 macos-option-as-alt = true
