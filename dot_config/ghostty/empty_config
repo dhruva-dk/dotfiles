@@ -1,0 +1,15 @@
+
+theme = catppuccin-mocha
+background-opacity = 0.9
+background-blur-radius = 20
+
+macos-titlebar-style = tabs
+window-padding-x = 10
+window-padding-y = 10
+
+window-colorspace = display-p3
+
+font-size = 16
+font-thicken = true 
+
+macos-option-as-alt = true
