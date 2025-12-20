@@ -122,4 +122,8 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init bash)"
 eval "$(~/.local/bin/mise activate bash)"
 
-export EDITOR="code --wait"
+if command -v code >/dev/null 2>&1; then
+    export EDITOR="code --wait"
+else
+    export EDITOR="nano"
+fi
