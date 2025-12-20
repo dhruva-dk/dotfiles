@@ -3,9 +3,11 @@ Host garnet
     User dkumar
     ForwardAgent yes
 
+{{ if .has_1password -}}
 Host *
-{{ if and (eq .chezmoi.os "darwin") .has_1password }}
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-{{ else if and (eq .chezmoi.os "linux") .has_1password }}
-  IdentityAgent "~/.1password/agent.sock"
-{{ end }}
+{{- if eq .chezmoi.os "darwin" }}
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{- else if eq .chezmoi.os "linux" }}
+    IdentityAgent "~/.1password/agent.sock"
+{{- end }}
+{{- end }}
