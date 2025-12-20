@@ -1,3 +1,8 @@
+{{- $has_1password := promptBoolOnce . "has_1password" "Will/Does this machine have 1Password SSH agent?" -}}
+
+[data]
+    has_1password = {{ $has_1password }}
+
 [git]
     autoCommit = true
     autoPush = true

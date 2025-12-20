@@ -4,8 +4,8 @@ Host garnet
     ForwardAgent yes
 
 Host *
-{{ if eq .chezmoi.os "darwin" }}
+{{ if and (eq .chezmoi.os "darwin") .data.has_1password }}
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-{{ else if eq .chezmoi.os "linux" }}
+{{ else if and (eq .chezmoi.os "linux") .data.has_1password }}
   IdentityAgent "~/.1password/agent.sock"
 {{ end }}
